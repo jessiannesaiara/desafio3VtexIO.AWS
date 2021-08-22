@@ -1,0 +1,9 @@
+.infoCardContainer {
+  background: #303030;
+}
+
+.infoCardImage {
+  width: 100%;
+  position: relative;
+  border-radius: 20px;
+}

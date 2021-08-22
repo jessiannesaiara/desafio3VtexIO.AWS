@@ -1,0 +1,246 @@
+{
+  "store.home": { 
+    "blocks": [  
+      "tab-layout#home",
+      "slider-layout",
+      "rich-text",
+      "search-result-layout.customQuery#home"
+      
+    ]
+  },
+
+  "search-result-layout.customQuery#home": {
+    "props": {
+      "querySchema": {
+        "skusFilter": "FIRST_AVAILABLE",
+        "simulationBehavior": "skip",
+        "maxItemsPerPage": 10,
+        "blockclass": "sr"
+      }
+    },
+    "blocks": [
+      "search-result-layout.desktop#lp"
+    ]
+
+  },
+"search-result-layout.desktop#lp": {
+  "children": [   
+   "search-content#lp"
+  ],
+  "props": {
+    "preventRouteChange": true
+  }
+},
+
+"search-content#lp": {
+  "blocks": [
+    "gallery#lp",
+    "not-found"
+  ]
+},
+
+"gallery#lp": {
+  "props": {
+    "layouts": [
+  {
+    "name": "grid",
+    "component": "GridSummary",
+    "itemsPerRow": {
+      "(min-width:1300px)": 2,
+      "desktop": 2,
+      "tablet": 2,
+      "phone":1
+    }
+  },
+   {
+    "name": "list",
+    "component": "ListSummary",
+    "itemsPerRow": 1
+   }
+  ],
+  "ListSummary": "product-summary.shelf#lp",
+  "GridSummary": "product-summary.shelf#lp"
+  }
+},
+
+"product-summary.shelf#lp": {
+  "children": [
+    "modal-trigger#lp",
+    "product-summary-name",
+    "product-summary-image#lp",
+    "vtex.product-highlights@2.x:product-highlights#1",
+    "vtex.product-highlights@2.x:product-highlights#2",
+    "product-summary-price",
+    "add-to-cart-button#lp"
+  ],
+  "props": {
+    "blockClass": ["aoba","teste"]
+  }
+},
+
+"product-summary-image#lp": {
+  "props": {
+    "showNavigationArrows" : true,
+    "showPaginationDots": true
+  }
+
+},
+
+"vtex.product-highlights@2.x:product-highlights#1": {
+  "children": ["product-highlight-text#1"
+  ]
+},
+
+"product-highlight-text#1": {
+  "props": {
+    "message": "PRÉ LANÇAMENTO"
+    
+  }
+},
+
+
+"vtex.product-highlights@2.x:product-highlights#2": {
+  "children": ["product-highlight-text#2"
+  ]
+},
+
+"product-highlight-text#2": {
+  "props": {
+    "message": "VALIDAÇÃO A PARTIR DE 09/10/2021"
+    
+  }
+},
+
+"add-to-cart-button#lp": {
+  "props": {
+    "onCLickBehavior": "go-to-product-page",
+    "text": "Ver detalhes"
+  }
+},
+
+"modal-trigger#lp": {
+  "children": [
+    "rich-text#lp",
+    "modal-layout#lp"
+  ]
+
+},
+
+"rich-text#lp": {
+  "props": {
+    "text": "AOBA"
+  }
+},
+
+"modal-layout#lp": {
+  "children": [
+    "video#lp"
+  ]
+
+},
+
+"video#lp": {
+  "props": {
+    "width": "100%",
+    "height": "600px",
+    "loop": false,
+    "autoPlay": true,
+    "muted": false,
+    "src": "https://youtu.be/vVNF4OASRDI",
+    "blockClass": "videoEl"
+  }
+},
+
+  "tab-layout#home": {
+    "children": [
+      "tab-list#home"
+    ]
+  },
+
+  "tab-list#home": {
+    "children": [
+      "tab-list.item#home1",
+      "tab-list.item#home2",
+      "tab-list.item#home3",
+      "tab-list.item#home4",
+      "tab-list.item#home5",
+      "tab-list.item#home6"
+    ]
+  },
+
+  "tab-list.item#home1": {
+    "props": {
+      "label": "PROMOÇÃO",
+      "defaultActiveTab": true,
+      "blockClass": "tab1"
+    }
+  },
+
+  "tab-list.item#home2": {
+    "props": {
+      "label": "CORINTHIAS",
+      "blockClass": "tab2"
+    }
+  },
+
+  "tab-list.item#home3": {
+    "props": {
+      "label": "PALMEIRAS"
+    }
+  },
+
+  "tab-list.item#home4": {
+    "props": {
+      "label": "SIGNOS"
+    }
+  },
+
+  "tab-list.item#home5": {
+    "props": {
+      "label": "DIVERTIDOS"
+    }
+  },
+
+  "tab-list.item#home6": {
+    "props": {
+      "label": "7MARAVILHAS"
+   }
+  },
+  
+  "slider-layout": {
+    "children": [
+      "info-card#1", 
+      "info-card#2"],
+    "props": {
+        "blockClass": "sli"
+        }
+    },
+
+  "info-card#1": {
+    "props": {
+      "fullWidth": true,
+      "arrowSize": "100px",
+      "maxWidth":"100%",
+      "callToActionMode": false,
+      "imageUrl": "https://maratonavirtual.s3.sa-east-1.amazonaws.com/6iibxhv7jzzdn2749uhoxub2fdjf"
+    }
+  },
+
+  "info-card#2": {
+    "props": {
+      "fullWidth": true,
+      "arrowSize": "100px",
+      "maxWidth":"100%",
+      "callToActionMode": false,
+      "imageUrl": "https://maratonavirtual.s3.sa-east-1.amazonaws.com/du3k6akoks0u3xe322aypnaaal8e"
+    }
+  },
+
+  "rich-text": {
+    "props": {
+      "text": "você está vendo provas de",
+      "textPosition": "CENTER"
+      
+    }
+  }
+}
